@@ -1,0 +1,3 @@
+Team,pts_scored,tot_yds,tot_plys,yds_per_ply,tov,fmbl,frst_downs,tot_comp,tot_pass_att,pass_yds,pass_td,int,net_yds_per_att,pass_frst_downs,rush_att,rush_yds,rush_td,rush_yds_att,rush_frst_downs,pen,pen_yds,pen_frst_downs,tot_drives,score_perc,tov_perc,avg_strt_line,time_per_drv TIME,plys_per_drv,yds_per_drv,pts_per_drv    
+Team Stats,306,5331,1075,5.0,24,12,319,397,591,3728,19,12,5.8,183,435,1603,9,3.7,101,118,920,35,176,33.0,13.1,Own 29.7,2:46,6.35,30.2,1.63
+Opp. Stats,383,5096,1053,4.8,20,10,313,312,491,3046,25,10,5.7,162,517,2050,12,4.0,122,116,913,29,179,40.2,11.2,Own 33.7,2:59,6.1,28.3,2.01

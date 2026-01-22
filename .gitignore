@@ -1,0 +1,10 @@
+# Ignore the database file
+database/nfc_south_stats.db
+
+# Ignore temporary files
+*.log
+*.tmp
+*.DS_Store
+
+# Ignore VS Code settings
+.vscode/
