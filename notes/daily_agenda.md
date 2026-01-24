@@ -7,3 +7,8 @@
     1. Begin writing specific questions for each category
     2. Start writing qqueries to answer questions
     3. Write own short notes while writing queries
+
+1/25/2026 Agenda
+    1. Write questions to answer for remaining categories
+    2. Start working on queries an analysis
+    3. Start working on README page
