@@ -136,5 +136,47 @@ SELECT team,
 FROM nfc_south_offense_log
 GROUP BY team;
 
+-- Special Teams Analysis ------------------------------------------------------------------------------------------------------------------------------
 
+SELECT team, 
+AVG(CASE WHEN result = 'W' THEN fgm * 1.0 / (fgm + pass_td + rush_td) END) 
+AS avg_fg_score_perc_win,
+AVG(CASE WHEN result = 'L' THEN fgm * 1.0 / (fgm + pass_td + rush_td) END)
+AS avg_fg_score_perc_loss
+FROM nfc_south_offense_log
+GROUP BY team;
 
+SELECT team, 
+AVG(CASE WHEN result = 'W' THEN fgm * 1.0 / fga END)
+- AVG(CASE WHEN result = 'L' THEN fgm * 1.0 / fga END)
+AS avg_fg_score_perc_diff
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team, 
+AVG(CASE WHEN result = 'W' THEN xpm * 1.0 / xpa END)
+- AVG(CASE WHEN result = 'L' THEN xpm * 1.0 / xpa END)
+AS avg_xp_score_perc_diff
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team, 
+    SUM(CASE WHEN result = 'L' AND (ptsa - pts) <= 3 THEN fga * 1.0 - fgm ELSE 0 END)
+    AS missed_fg_close_losses
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT 
+    team,
+    COUNT(CASE WHEN result = 'L' AND (ptsa - pts) <= 3 THEN 1 END)
+     AS close_losses
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT 
+    team,
+    SUM(CASE WHEN result = 'L' AND (ptsa - pts) <= 3 THEN (fga - fgm) ELSE 0 END) * 1.0
+    / NULLIF(COUNT(CASE WHEN result = 'L' AND (ptsa - pts) <= 3 THEN 1 END), 0) 
+    AS missed_fg_per_close_loss
+FROM nfc_south_offense_log
+GROUP BY team;

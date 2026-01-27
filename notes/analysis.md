@@ -19,3 +19,21 @@ Rusing:
     Do teams abandon the run in losses?
     
         * When looking at the data almost all teams seem to "abandon" the run in losses, which is generally the gameplan for most teams. As stated earlier, teams attempt more passes and less rushes in games that they lost, suggesting that they begin to throw the ball more in order to save game clock and get more chunk yardage plays. 
+
+Special Teams:
+    Is poor field goal execution losing games?
+    
+        * Three of four teams in the NFC south showed field goals account for a smaller share of total scores in losses. Also, three of four teams have a higher accuracy of field goals in wins. This suggests that teams are not primarily losing games due to missed field goals. This also points towards the teams lack of success in sustaining drives and getting into field goal range rather than the inability to finsh drives once in scoring range. However, this data says more about the teams offensive consistency rather than special teams performance.
+
+    Are close losses associated with missed field goals?
+
+        * Each NFC South team experienced at least one close loss (defined as a loss by three points or fewer) in which a field goal was missed. The Panthers and Falcons each missed a field goal in half of their close losses, indicating that special teams execution plausibly influenced the outcome in those games. The Saints recorded only one close loss with a missed field goal, while the Buccaneers missed one field goal across their three close losses. This suggests that while broader offensive and defensive factors drive season-long success, special teams execution can be decisive in close games. In a tightly contested division, where three teams finished tied for the best record, these special teams errors likely played a meaningful role in shaping playoff positioning. 
+
+Sloppy Play: 
+    What does the turnover gap in wins vs. losses suggest?
+
+        * 
+
+    Are penalties or sack more damaging factors in losses?
+
+        * 

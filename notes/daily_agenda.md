@@ -12,3 +12,8 @@
     1. Write questions to answer for remaining categories
     2. Start working on queries an analysis
     3. Start working on README page
+
+1/28/2026 Agenda
+    1. Finish analysis for sloppy play and defense.
+    2. Work on README
+    3. Optional: FInsish analysis for down play
