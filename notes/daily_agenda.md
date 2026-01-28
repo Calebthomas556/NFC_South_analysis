@@ -17,3 +17,7 @@
     1. Finish analysis for sloppy play and defense.
     2. Work on README
     3. Optional: FInsish analysis for down play
+
+1/29/2026 Agenda
+    1. Finish analysis of defense and down play
+    2. Work on Readme
