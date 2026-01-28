@@ -180,3 +180,135 @@ SELECT
     AS missed_fg_per_close_loss
 FROM nfc_south_offense_log
 GROUP BY team;
+
+-- Sloppy Play Analysis --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--Turnover Gaps --------
+SELECT team, 
+AVG(CASE WHEN result = 'W' THEN turnovers END)
+- AVG(CASE WHEN result = 'L' THEN turnovers END)
+AS turnover_gap
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team, 
+AVG(CASE WHEN result = 'W' THEN ints END)
+- AVG(CASE WHEN result = 'L' THEN ints END)
+AS int_gap
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team, 
+AVG(CASE WHEN result = 'W' THEN fumb_lost END)
+- AVG(CASE WHEN result = 'L' THEN fumb_lost END)
+AS fumble_gap
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team, 
+AVG(CASE WHEN result = 'W' THEN time_of_poss END)
+AS avg_top_win,
+AVG(CASE WHEN result = 'L' THEN time_of_poss END)
+AS avg_top_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+--Penalty -------
+
+SELECT team, 
+AVG(CASE WHEN result = 'W' THEN penalties END)
+AS pen_in_wins,
+AVG(CASE WHEN result = 'L' THEN penalties END)
+AS pen_in_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team, 
+AVG(CASE WHEN result = 'W' THEN pen_yds END)
+AS pen_yds_in_wins,
+AVG(CASE WHEN result = 'L' THEN pen_yds END)
+AS pen_yds_in_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team, 
+AVG(CASE WHEN result = 'W' AND (pts - ptsa) <= 7 THEN penalties END)
+AS pen_in_big_wins,
+AVG(CASE WHEN result = 'W' AND (pts - ptsa) >= 7 THEN penalties END)
+AS pen_in_close_win
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team, 
+AVG(CASE WHEN result = 'L' AND (ptsa - pts) <= 7 THEN penalties END)
+AS pen_in_big_loss,
+AVG(CASE WHEN result = 'L' AND (ptsa - pts) >= 7 THEN penalties END)
+AS pen_in_close_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team, 
+AVG(CASE WHEN result = 'L' AND (ptsa - pts) <= 7 THEN penalties * 1.0 / total_plays END)
+AS pen_per_play_big_loss,
+AVG(CASE WHEN result = 'L' AND (ptsa - pts) >= 7 THEN penalties * 1.0 / total_plays END)
+AS pen_per_play_close_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team, 
+AVG(CASE WHEN result = 'W' AND (pts - ptsa) <= 7 THEN penalties * 1.0 / total_plays END)
+AS pen_per_play_big_win,
+AVG(CASE WHEN result = 'W' AND (pts - ptsa) >= 7 THEN penalties * 1.0 / total_plays END)
+AS pen_per_play_close_win
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team, 
+AVG(CASE WHEN result = 'W' THEN penalties * 1.0 / total_plays END)
+AS pen_per_play_wins,
+AVG(CASE WHEN result = 'L' THEN penalties * 1.0 / total_plays END)
+AS pen_per_play_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team, 
+AVG(CASE WHEN result = 'W' THEN pen_yds * 1.0 / total_yds END)
+AS pen_yds_per_yd_wins,
+AVG(CASE WHEN result = 'L' THEN pen_yds * 1.0 / total_yds END)
+AS pen_yds_per_yd_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team, 
+AVG(CASE WHEN result = 'W' THEN pen_yds * 1.0 / total_plays END)
+AS pen_yds_per_play_wins,
+AVG(CASE WHEN result = 'L' THEN pen_yds * 1.0 / total_plays END)
+AS pen_yds_per_play_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team, 
+AVG(CASE WHEN result = 'W' THEN pen_yds * 1.0 / penalties END)
+AS pen_yds_per_pen_win,
+AVG(CASE WHEN result = 'L' THEN pen_yds * 1.0 / penalties END)
+AS pen_yds_per_pen_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+-- Sacks Allowed ------------
+
+SELECT team, 
+AVG(CASE WHEN result = 'W' THEN sacks_all END)
+AS avg_sack_all_win,
+AVG(CASE WHEN result = 'L' THEN sacks_all END)
+AS avg_sack_all_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team, 
+AVG(CASE WHEN result = 'W' THEN yds_lost_sack END)
+AS yds_lost_sack_win,
+AVG(CASE WHEN result = 'L' THEN yds_lost_sack END)
+AS yds_lost_sack_loss
+FROM nfc_south_offense_log
+GROUP BY team;

@@ -29,11 +29,26 @@ Special Teams:
 
         * Each NFC South team experienced at least one close loss (defined as a loss by three points or fewer) in which a field goal was missed. The Panthers and Falcons each missed a field goal in half of their close losses, indicating that special teams execution plausibly influenced the outcome in those games. The Saints recorded only one close loss with a missed field goal, while the Buccaneers missed one field goal across their three close losses. This suggests that while broader offensive and defensive factors drive season-long success, special teams execution can be decisive in close games. In a tightly contested division, where three teams finished tied for the best record, these special teams errors likely played a meaningful role in shaping playoff positioning. 
 
-Sloppy Play: 
-    What does the turnover gap in wins vs. losses suggest?
+Sloppy Play:
 
-        * 
+    Are teams playing more disciplined in wins?
 
-    Are penalties or sack more damaging factors in losses?
+        * Surprisingly, teams are committing more penalties in wins than in losses. Teams are also averaging a lot more penalties in big wins and big losses than in close losses and close wins, suggesting that teams are playing more disciplined in close games and start to play sloppier once they are up big or down big. In the NFC South teams are averaging more penalties, penalty yars, penalty yards per play, and penalty yards per yard in wins than in losses. Without more in-depth penalty data, like types of penalties and when the penalties occur, it is hard to say that teams play more disciplined in wins than in losses or vice versa. Another small takeaway from this data is that the Falcons average about 10 yards per penalty in losses and less than 7 in wins, suggesting that penalties could be effecting them a bit more in losses than other teams.
+
+    What does the sack and turnover gap in wins vs. losses suggest?
+
+        * Without surprise each team averages more total turnovers, interceptions, and fumbles lost in losses than in wins. Turnovers are the worst way to end a drive because it not only ends your offense with no point but usually sets up the opposing team with goo field positioning. In wins, the Falcons and Panthers averaged more sacks allowed than in losses while the Bucs and Saints both allowed over .5 more sacks in losses. The Falcons were the only team to lose more yards due to sacks in wins than in losses. This analysis, paired with the penalty analysis, suggest that when the Falcons play a "cleaner" it does not neccessarily translate to wins.
+
+Defense:
+
+    Disrupting Pass or Run more predictive of wins?
+
+        *
+
+    What type of play are teams failing to defend on 3rd downs?
+
+        *
+
+    How effective are sacks in wins vs. losses?
 
         * 
