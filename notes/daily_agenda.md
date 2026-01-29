@@ -21,3 +21,8 @@
 1/29/2026 Agenda
     1. Finish analysis of defense and down play
     2. Work on Readme
+
+1/30/2026
+    1. Complete README
+    2. Upload everything to github, linkedin, update resume.
+    3. Post on linkedin

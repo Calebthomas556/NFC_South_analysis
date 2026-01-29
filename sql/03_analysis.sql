@@ -312,3 +312,195 @@ AVG(CASE WHEN result = 'L' THEN yds_lost_sack END)
 AS yds_lost_sack_loss
 FROM nfc_south_offense_log
 GROUP BY team;
+
+-- Defense Analysis ----------------------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN rush_att END)
+AS avg_opp_rush_att_win,
+AVG(CASE WHEN result = 'W' THEN rush_yds END)
+AS avg_opp_rush_yds_win,
+AVG(CASE WHEN result = 'L' THEN rush_att END)
+AS avg_opp_rush_att_loss,
+AVG(CASE WHEN result = 'L' THEN rush_yds END)
+AS avg_opp_rush_yds_loss
+FROM nfc_south_defense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN rush_yds * 1.0 / rush_att END)
+AS avg_opp_rush_yds_att_win,
+AVG(CASE WHEN result = 'L' THEN rush_yds * 1.0 / rush_att END)
+AS avg_opp_rush_yds_att_loss
+FROM nfc_south_defense_log
+GROUP BY team;
+
+SELECT team,
+SUM(CASE WHEN result = 'W' THEN rush_td END)
+AS total_rush_td_win,
+SUM(CASE WHEN result = 'L' THEN rush_td END)
+AS total_rush_td_loss
+FROM nfc_south_defense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN rush_td END)
+AS avg_rush_td_win,
+AVG(CASE WHEN result = 'L' THEN rush_td END)
+AS avg_rush_td_loss
+FROM nfc_south_defense_log
+GROUP BY team;
+
+-- Passing Defense ---------------------------
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN pass_att END)
+AS avg_opp_pass_att_win,
+AVG(CASE WHEN result = 'W' THEN pass_yds END)
+AS avg_opp_pass_yds_win,
+AVG(CASE WHEN result = 'L' THEN pass_att END)
+AS avg_opp_pass_att_loss,
+AVG(CASE WHEN result = 'L' THEN pass_yds END)
+AS avg_opp_pass_yds_loss
+FROM nfc_south_defense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN pass_td END)
+AS avg_pass_td_win,
+AVG(CASE WHEN result = 'L' THEN pass_td END)
+AS avg_pass_td_loss
+FROM nfc_south_defense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN pass_yds * 1.0 / pass_att END)
+AS pass_yd_per_att_win,
+AVG(CASE WHEN result = 'L' THEN pass_yds * 1.0 / pass_att END)
+AS pass_yd_per_att_loss
+FROM nfc_south_defense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN comp_perc END)
+AS pass_comp_perc_win,
+AVG(CASE WHEN result = 'L' THEN comp_perc END)
+AS pass_comp_perc_loss
+FROM nfc_south_defense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN pass_yds * 1.0 / pass_cmp END)
+AS pass_yd_per_cmp_win,
+AVG(CASE WHEN result = 'L' THEN pass_yds * 1.0 / pass_cmp END)
+AS pass_yd_per_cmp_loss
+FROM nfc_south_defense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN qb_rating END)
+AS qb_rating_win,
+AVG(CASE WHEN result = 'L' THEN qb_rating END)
+AS qb_rating_loss
+FROM nfc_south_defense_log
+GROUP BY team;
+
+-- Sacks ---------------------------------------
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN sacks_all END)
+AS sacks_in_wins,
+AVG(CASE WHEN result = 'L' THEN sacks_all END)
+AS sacks_in_loss
+FROM nfc_south_defense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN yds_lost_sack END)
+AS sack_yds_in_wins,
+AVG(CASE WHEN result = 'L' THEN yds_lost_sack END)
+AS sack_yds_in_loss
+FROM nfc_south_defense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN yds_lost_sack * 1.0 / total_plays END)
+AS sack_yds_play_in_wins,
+AVG(CASE WHEN result = 'L' THEN yds_lost_sack * 1.0 / total_plays END)
+AS sack_yds_play_in_loss
+FROM nfc_south_defense_log
+GROUP BY team;
+
+-- Down Play Analysis-------------------------------------------------------------------------------------------------------------------------------
+
+-- frst_down_by_pass,
+-- frst_down_by_rush,
+-- frst_down_by_pen,
+-- frst_downs,
+-- thrd_down_conv,
+-- thrd_down_att,
+-- frth_down_conv,
+-- frth_down_att
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN frst_downs END)
+AS frst_downs_wins,
+AVG(CASE WHEN result = 'L' THEN frst_downs END)
+AS frst_downs_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN thrd_down_conv * 1.0 / thrd_down_att END)
+AS thrd_conv_perc_win,
+AVG(CASE WHEN result = 'L' THEN thrd_down_conv * 1.0 / thrd_down_att END)
+AS thrd_conv_perc_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN frth_down_conv * 1.0 / frth_down_att END)
+AS frth_conv_perc_win,
+AVG(CASE WHEN result = 'L' THEN frth_down_conv * 1.0 / frth_down_att END)
+AS frth_conv_perc_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN frst_down_by_pass * 1.0 / frst_downs END)
+AS frst_by_pass_win,
+AVG(CASE WHEN result = 'L' THEN frst_down_by_pass * 1.0 / frst_downs END)
+AS frst_by_pass_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN frst_down_by_rush * 1.0 / frst_downs END)
+AS frst_rush_win,
+AVG(CASE WHEN result = 'L' THEN frst_down_by_rush * 1.0 / frst_downs END)
+AS frst_rush_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN frst_down_by_pen * 1.0 / frst_downs END)
+AS frst_pen_win,
+AVG(CASE WHEN result = 'L' THEN frst_down_by_pen * 1.0 / frst_downs END)
+AS frst_pen_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN frst_down_by_pen END)
+AS tot_frst_pen_win,
+AVG(CASE WHEN result = 'L' THEN frst_down_by_pen END)
+AS tot_frst_pen_loss
+FROM nfc_south_offense_log
+GROUP BY team;
+
+SELECT team,
+AVG(CASE WHEN result = 'W' THEN frth_down_att END)
+AS frth_att_win,
+AVG(CASE WHEN result = 'L' THEN frth_down_att END)
+AS frth_att_loss
+FROM nfc_south_offense_log
+GROUP BY team;

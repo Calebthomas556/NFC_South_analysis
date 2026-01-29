@@ -43,12 +43,22 @@ Defense:
 
     Disrupting Pass or Run more predictive of wins?
 
-        *
-
-    What type of play are teams failing to defend on 3rd downs?
-
-        *
+        * In losses vs. wins, ech team performed as expected on defense. Opponent rushing volume is up in losses, likely due to running the ball more to burn game clock. However, rushing efficiency is not as consistent. Saints and Falcons allow slightly less yds per carry in losses while the Panthers and Bucs are the opposite. For the Falcons, the data suggested disrupting the run might have led to wins more clearly than the other three teams. Passing defense was as expected as well. Passing attempts and yards down in losses but efficiency up. The saints had the biggest gap in passing defense performance in wins and losses, suggesting that disrupting the pass game might be more effective in getting wins.
 
     How effective are sacks in wins vs. losses?
 
-        * 
+        * The panthers are the only team to average more sacks in losses than in wins, but each team averaged more total sack yards and sack yards per play in wins. The difference in teams ability to get sacks and how effective they are in wins vs losses is significant but not enough to say that getting more sacks leads to wins. Getting a sack is going to help get a win and we see that throgh the numbers.  
+
+Down Play:
+
+    Wins correlate with total first downs or conversion percentage?
+
+        * Teams in the NFC south do not have a significant difference in total first downs in wins vs losses, with the Bucs actually having more in losses. On the other hand, each teams 3rd down covnersion rate is significantly higher in wins and the 4th down conversion rate is almost double in wins for each team.
+
+    Are penalties skewing first down numbers in losses?
+
+        * Yes. Each team averages close to double first downs gained by penalties in losses compared to wins, suggestint that opponents likely play less disciplined when up. 
+
+    Does being aggresive on 4th correlate to wins?
+
+        * Panthers are the only team that averages less 4th down attempts in losses. In late game situations teams usually wil go for it on 4th down when trailing so these are expected numbers. However, the conversion rates for each of these teams on 4th down are up significantly higher in wins. Finding a way to efficienty convert 4th downs may be a factor in getting wins.
